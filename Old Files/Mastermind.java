@@ -1,4 +1,3 @@
-package mastermind;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -64,40 +63,40 @@ public class Mastermind {
         scan.close();
     }
 
-    public Marks processUserInput(String userInput) {
-        while (userInput.equalsIgnoreCase("help")) {
-            Help.getHelp();
-            System.out.println("Now go forth and make a guess (or enter a command)!");
-            userInput = scan.nextLine();
-        }
-        while (userInput.equalsIgnoreCase("score")) {
-            getScore();            
-            System.out.println("Make a guess (or enter another command): ");
-            userInput = scan.nextLine();
-        } 
-        while (userInput.equalsIgnoreCase("previous")) {
-            previousGuesses();
-            System.out.println("Make a guess (or enter another command): ");
-            userInput = scan.nextLine();
-        }
-        while (userInput.equalsIgnoreCase("visualize")) {
-            visualize();
-            System.out.println("Make a guess (or enter another command): ");
-            userInput = scan.nextLine();
-        }
-        if (userInput.equalsIgnoreCase("reset")) {
-            reset();
-        }
-        ArrayList<String> userGuess = new ArrayList<>(Arrays.asList(userInput.split(" ")));
-        CodePin guessPin1 = new CodePin(userGuess.get(0));
-        CodePin guessPin2 = new CodePin(userGuess.get(1));
-        CodePin guessPin3 = new CodePin(userGuess.get(2));
-        CodePin guessPin4 = new CodePin(userGuess.get(3));
-        Guess guess = new Guess(guessPin1, guessPin2, guessPin3, guessPin4);
-        guessList.add(guess);
-        guessesMade ++;
-        return new Marks(guess, answer);
-    }
+    // public static Marks processUserInput(String userInput) {
+    //     while (userInput.equalsIgnoreCase("help")) {
+    //         Help.getHelp();
+    //         System.out.println("Now go forth and make a guess (or enter a command)!");
+    //         userInput = scan.nextLine();
+    //     }
+    //     while (userInput.equalsIgnoreCase("score")) {
+    //         getScore();            
+    //         System.out.println("Make a guess (or enter another command): ");
+    //         userInput = scan.nextLine();
+    //     } 
+    //     while (userInput.equalsIgnoreCase("previous")) {
+    //         previousGuesses();
+    //         System.out.println("Make a guess (or enter another command): ");
+    //         userInput = scan.nextLine();
+    //     }
+    //     while (userInput.equalsIgnoreCase("visualize")) {
+    //         visualize();
+    //         System.out.println("Make a guess (or enter another command): ");
+    //         userInput = scan.nextLine();
+    //     }
+    //     if (userInput.equalsIgnoreCase("reset")) {
+    //         reset();
+    //     }
+    //     ArrayList<String> userGuess = new ArrayList<>(Arrays.asList(userInput.split(" ")));
+    //     CodePin guessPin1 = new CodePin(userGuess.get(0));
+    //     CodePin guessPin2 = new CodePin(userGuess.get(1));
+    //     CodePin guessPin3 = new CodePin(userGuess.get(2));
+    //     CodePin guessPin4 = new CodePin(userGuess.get(3));
+    //     Guess guess = new Guess(guessPin1, guessPin2, guessPin3, guessPin4);
+    //     guessList.add(guess);
+    //     guessesMade ++;
+    //     return new Marks(guess, answer);
+    // }
 
     public void getScore() {
         System.out.println("Your current score is: " + totalWins + " wins and " + totalLosses + " losses.");

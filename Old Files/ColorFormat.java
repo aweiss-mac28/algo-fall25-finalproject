@@ -1,4 +1,3 @@
-package mastermind;
 
 public class ColorFormat {
     public static String toColorFormat(String color) {

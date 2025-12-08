@@ -1,4 +1,4 @@
-package mastermind;
+
 
 import java.awt.Color;
 

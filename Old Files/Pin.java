@@ -1,4 +1,3 @@
-package mastermind;
 
 import edu.macalester.graphics.Ellipse;
 
